@@ -1,0 +1,38 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+<h2>Productos Disponibles</h2>
+<p>Aquí puede ver nuestros productos disponibles:</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Volumen</th>
+            <th>Tipo de Producto</th>
+            <th>Tipo de Vaso</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>${{ producto.precio_publico }}</td>
+            <td>{{ producto.volumen }} ml</td>
+            <td>{{ producto.tipo_producto }}</td>
+            <td>{{ producto.tipo_vaso }}</td>
+            <td>
+                {% if current_user.is_authenticated %}
+                <form action="/vender/{{ producto.id }}" method="post">
+                    <button type="submit" class="btn btn-primary">Vender</button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

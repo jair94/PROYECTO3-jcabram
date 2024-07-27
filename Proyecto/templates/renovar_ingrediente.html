@@ -1,0 +1,11 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Renovar Ingrediente{% endblock %}
+
+{% block content %}
+<h2>Renovar Ingrediente</h2>
+<p>Ingrediente: {{ ingrediente.nombre }}</p>
+<form method="post">
+    <button type="submit" class="btn btn-primary">Renovar</button>
+</form>
+{% endblock %}

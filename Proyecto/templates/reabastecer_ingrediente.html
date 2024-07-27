@@ -1,0 +1,15 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Reabastecer Ingrediente{% endblock %}
+
+{% block content %}
+<h2>Reabastecer Ingrediente</h2>
+<p>Ingrediente: {{ ingrediente.nombre }}</p>
+<form method="post">
+    <div class="form-group">
+        <label for="cantidad">Cantidad a reabastecer:</label>
+        <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Reabastecer</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos de la Heladería</title>
+    
+</head>
+<body>
+    <h1>Productos Disponibles</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Tipo de Vaso</th>
+                <th>Volumen</th>
+                <th>Tipo de Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>${{ producto.precio_publico }}</td>
+                <td>{{ producto.tipo_vaso }}</td>
+                <td>{{ producto.volumen }} ml</td>
+                <td>{{ producto.tipo_producto }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

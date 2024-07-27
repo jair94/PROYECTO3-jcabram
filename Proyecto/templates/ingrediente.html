@@ -1,0 +1,18 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Producto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Ingrediente: {{ ingrediente.nombre }}</h2>
+    <p><strong>ID:</strong> {{ ingrediente.id }}</p>
+    <p><strong>Nombre:</strong> {{ ingrediente.nombre }}</p>
+    <p><strong>Precio:</strong> {{ ingrediente.precio }}</p>
+    <p><strong>Calorias:</strong> {{ ingrediente.calorias }}</p>
+    <p><strong>Inventario:</strong> {{ ingrediente.inventario }}</p>
+    <p><strong>Vegetariano:</strong> {{ ingrediente.es_vegetariano}}</p>
+    <p><strong>Tipo:</strong> {{ tipo_nombre }}</p> 
+    <p><strong>Sabor:</strong> {{ ingrediente.sabor }}</p>
+    <a href="/" class="btn btn-primary">Volver al menú</a>
+</div>
+{% endblock %}

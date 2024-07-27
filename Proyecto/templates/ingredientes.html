@@ -1,0 +1,40 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Ingredientes{% endblock %}
+
+{% block content %}
+<h2>Ingredientes Disponibles</h2>
+<p>Aquí puede ver nuestros Ingredientes disponibles:</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Calorias</th>
+            <th>Inventario</th>
+            <th>Vegetariano</th>
+            <th>Tipo</th>
+            <th>Sabor</th>
+            <th>Acciones</th> <!-- Nueva columna para las acciones -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for ingrediente in ingredientes %}
+        <tr>
+            <td>{{ ingrediente.nombre }}</td>
+            <td>${{ ingrediente.precio }}</td>
+            <td>{{ ingrediente.calorias }}</td>
+            <td>{{ ingrediente.inventario }}</td>
+            <td>{{ ingrediente.es_vegetariano }}</td>
+            <td>{{ ingrediente.tipo.nombre }}</td>
+            <td>{{ ingrediente.sabor }}</td>
+            <td>
+                <!-- Enlaces para renovar y reabastecer -->
+                <a href="{{ url_for('renovar_ingrediente', id=ingrediente.id) }}">Renovar</a> |
+                <a href="{{ url_for('reabastecer_ingrediente', id=ingrediente.id) }}">Reabastecer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

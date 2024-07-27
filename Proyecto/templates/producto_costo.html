@@ -1,0 +1,9 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Costo de Producción del Producto{% endblock %}
+
+{% block content %}
+    <h2>Costo de Producción del Producto: {{ producto.nombre }}</h2>
+    <p>Costo: {{ costo }}</p>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver a productos</a>
+{% endblock %}

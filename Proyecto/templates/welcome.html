@@ -1,0 +1,10 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Thank you for logging in. We are glad to see you.</p>
+    <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+    <a href="/" class="btn btn-secondary">Ver productos</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Producto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Producto: {{ producto.nombre }}</h2>
+    <p><strong>ID:</strong> {{ producto.id }}</p>
+    <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+    <p><strong>Precio Público:</strong> {{ producto.precio_publico }}</p>
+    <p><strong>Tipo de Vaso:</strong> {{ producto.tipo_vaso }}</p>
+    <p><strong>Volumen:</strong> {{ producto.volumen }}</p>
+    <p><strong>Heladería ID:</strong> {{ producto.heladeria_id }}</p>
+    <p><strong>Tipo de Producto:</strong> {{ producto.tipo_producto }}</p>
+    <a href="/" class="btn btn-primary">Volver al menú</a>
+</div>
+{% endblock %}

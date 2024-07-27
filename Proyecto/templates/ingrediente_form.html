@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Ingrediente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Agregar Ingrediente</h1>
+        <form action="/ingrediente" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" class="form-control" id="precio" name="precio" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="calorias">Calorías:</label>
+                <input type="number" class="form-control" id="calorias" name="calorias" required>
+            </div>
+            <div class="form-group">
+                <label for="inventario">Inventario:</label>
+                <input type="number" class="form-control" id="inventario" name="inventario" required>
+            </div>
+            <div class="form-group">
+                <label for="es_vegetariano">Es Vegetariano:</label>
+                <select class="form-control" id="es_vegetariano" name="es_vegetariano" required>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tipo_id">Tipo ID:</label>
+                <input type="number" class="form-control" id="tipo_id" name="tipo_id" required>
+            </div>
+            <div class="form-group">
+                <label for="sabor">Sabor:</label>
+                <input type="text" class="form-control" id="sabor" name="sabor">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Ingrediente</button>
+        </form>
+    </div>
+</body>
+</html>

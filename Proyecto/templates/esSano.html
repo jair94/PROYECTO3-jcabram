@@ -1,0 +1,9 @@
+{% extends "heladeria.html" %}
+
+{% block title %}El Ingrediente es Sano{% endblock %}
+
+{% block content %}
+    <h2>El ingrediente: {{ ingrediente.nombre }}</h2>
+    <p>Es Sano: {{ es_sano }}</p>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver a productos</a>
+{% endblock %}

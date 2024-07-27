@@ -1,0 +1,13 @@
+{% extends "heladeria.html" %}
+
+{% block title %}Renovar Inventario{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Renovar Inventario de {{ ingrediente.nombre }}</h2>
+    <form id="renovar-form" method="post" action="/ingrediente/{{ ingrediente.id }}/renovar">
+        <button type="submit" class="btn btn-primary">Renovar Inventario</button>
+    </form>
+    <a href="/" class="btn btn-secondary">Cancelar</a>
+</div>
+{% endblock %}
