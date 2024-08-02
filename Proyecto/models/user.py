@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user
 from db import db
 
-class User(UserMixin, db.Model):
+class Users(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(45), nullable=False)
     password = db.Column(db.String(255), nullable=False)  # Incrementar longitud para el hash
@@ -18,7 +18,7 @@ class User(UserMixin, db.Model):
     
     @staticmethod
     def authenticate(username, password):
-        user = User.query.filter_by(username=username).first()  
+        user = Users.query.filter_by(username=username).first()  
         if user and check_password_hash(user.password, password):
             login_user(user)
             return True

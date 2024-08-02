@@ -5,7 +5,7 @@ from models.heladeria import Heladeria
 from models.producto import Producto
 from models.ingredientes import Ingredientes
 from models.tipo_ingrediente import TipoIngrediente
-from models.user import User
+from models.user import Users
 from models.heladeria import Heladeria
 from db import db
 from dotenv import load_dotenv
@@ -29,7 +29,7 @@ login_manager = LoginManager(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    user = User.query.get(user_id)
+    user = Users.query.get(user_id)
     if user:
         return user
     return None
