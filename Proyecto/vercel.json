@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "app.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "app.py" }
+    ],
+    "env": {
+        "USER_DB":"root",
+        "PASSWORD_DB":"PYecFxYAGXlFbNWMhcLNiuvOujHPpRUQ",
+        "HOST_DB":"mysql.railway.internal",
+        "SCHEMA_DB":"railway"
+    }  
+}
