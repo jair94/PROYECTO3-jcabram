@@ -21,7 +21,7 @@ load_dotenv()
 
 secret_key = os.urandom(24)
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = f'mysql+pymysql://root:PYecFxYAGXlFbNWMhcLNiuvOujHPpRUQ@monorail.proxy.rlwy.net:24811/railway'
+app.config["SQLALCHEMY_DATABASE_URI"] = f'mysql://root:PYecFxYAGXlFbNWMhcLNiuvOujHPpRUQ@monorail.proxy.rlwy.net:24811/railway'
 app.config["SECRET_KEY"] = secret_key
 db.init_app(app)
 api = Api(app)
